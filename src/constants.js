@@ -1,0 +1,4 @@
+const NUM_OF_CARDS = 52;
+const MAX_CARD_VALUE = 13;
+
+export { MAX_CARD_VALUE, NUM_OF_CARDS };

@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, memo } from "react";
+import Game from "./Game";
+import Main from "./Main";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="flex justify-center h-3/5 w-2/4 border-4 border-blue-800 m-auto mt-8 p-6">
+      <Router>
+        <Switch>
+          <Route path="/game">
+            <Game />
+          </Route>
+          <Route path="/">
+            <Main />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }
