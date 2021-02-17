@@ -1,7 +1,6 @@
-import { useEffect, memo } from "react";
-import Game from "./Game";
-import Main from "./Main";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Game from "./components/game/Game";
+import Main from "./components/main/Main";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   return (
