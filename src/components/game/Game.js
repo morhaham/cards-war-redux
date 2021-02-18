@@ -4,6 +4,8 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { distCards, setNextCards, pointsIncreament } from "../../state/actions";
+import Player from "../player/Player";
+import Card from "../card/Card";
 
 function Game() {
   const player = useSelector(({ player }) => player);
@@ -12,6 +14,7 @@ function Game() {
   const cards = useSelector(({ cards }) => cards);
   const dispatch = useDispatch();
   const history = useHistory();
+
   const handleReset = () => {
     dispatch(distCards(cards));
   };
@@ -26,6 +29,7 @@ function Game() {
   }, [game_ready]);
 
   useEffect(() => {
+    //  in the first component mount, current_card is undefined. so we have to check for it.
     if (player.current_card && computer.current_card) {
       dispatch(pointsIncreament());
     }
@@ -38,16 +42,16 @@ function Game() {
   return (
     <div className="flex justify-center">
       <div className="flex flex-col">
-        <div>
-          <div>{player.name}</div>
-          <div>Points: {player.points}</div>
-          <div>{player.current_card}</div>
-        </div>
-        <div>
-          <div>{computer.current_card}</div>
-          <div>Points: {computer.points}</div>
-          <div>{computer.name}</div>
-        </div>
+        <Player>
+          <Player.Name name={computer.name} />
+          <Player.Points points={computer.points} />
+          <Card current_card={computer.current_card} />
+        </Player>
+        <Player>
+          <Card current_card={player.current_card} />
+          <Player.Points points={player.points} />
+          <Player.Name name={player.name} />
+        </Player>
         {!player.cards.length || !computer.cards.length ? (
           <Button
             onClick={handleReset}

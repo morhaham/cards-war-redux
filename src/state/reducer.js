@@ -73,7 +73,6 @@ const setNextCards = (state) => {
 };
 
 const distCards = (state, cards) => {
-  console.log(state);
   const computer_cards = cards.slice(0, NUM_OF_CARDS / 2);
   const player_cards = cards.slice(NUM_OF_CARDS / 2);
   const computer_current_card = computer_cards.pop();

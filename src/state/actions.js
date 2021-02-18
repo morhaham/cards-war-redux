@@ -2,7 +2,6 @@ import { shuffle } from "../helpers";
 
 // action creator to distribute the cards at the beginning of the game
 export const distCards = (cards) => {
-  console.log(cards);
   shuffle(cards);
   return {
     type: "DIST_CARDS",

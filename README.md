@@ -1,4 +1,12 @@
-# Getting Started with Create React App
+# Cards war
+
+This game is kind of a boilerplate for other coming games that I want to develop like poker.
+
+# Features
+
+- State management by Redux
+- React Router for navigation
+- Twailwind css utility framework
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
